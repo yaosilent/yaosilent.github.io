@@ -21,10 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 不传 version：pnpm/action-setup 会读 package.json 的 packageManager 字段，
+      # 同时传 version 会报 "Multiple versions of pnpm specified"。
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
